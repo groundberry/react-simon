@@ -1,0 +1,94 @@
+.Simon {
+  background-color: #000;
+  border-radius: 50%;
+  box-shadow: 0 10px #333;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  height: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  position: relative;
+  width: 500px;
+}
+
+.Simon-button {
+  border-radius: 10px;
+  border-style: none;
+  color: transparent;
+}
+
+.Simon-button:active {
+  transform: translateY(3px);
+}
+
+.Simon-buttonGreen {
+  background-color: hsl(85, 88%, 45%);
+  border-top-left-radius: 100%;
+  box-shadow: 0 5px hsl(85, 88%, 35%);
+}
+
+.Simon-buttonGreen:hover,
+.Simon-buttonGreen:focus {
+  background-color: hsl(85, 88%, 65%);
+}
+
+.Simon-buttonGreen:active {
+  box-shadow: 0 2px hsl(85, 88%, 35%);
+}
+
+.Simon-buttonRed {
+  background-color: hsl(352, 88%, 45%);
+  border-top-right-radius: 100%;
+  box-shadow: 0 5px hsl(352, 88%, 35%);
+}
+
+.Simon-buttonRed:hover,
+.Simon-buttonRed:focus {
+  background-color: hsl(352, 88%, 65%);
+}
+
+.Simon-buttonRed:active {
+  box-shadow: 0 2px hsl(352, 88%, 35%);
+}
+
+.Simon-buttonYellow {
+  background-color: hsl(51, 88%, 45%);
+  border-bottom-left-radius: 100%;
+  box-shadow: 0 5px hsl(51, 88%, 35%);
+}
+
+.Simon-buttonYellow:hover,
+.Simon-buttonYellow:focus {
+  background-color: hsl(51, 88%, 65%);
+}
+
+.Simon-buttonYellow:active {
+  box-shadow: 0 2px hsl(51, 88%, 35%);
+}
+
+.Simon-buttonBlue {
+  background-color: hsl(190, 88%, 45%);
+  border-bottom-right-radius: 100%;
+  box-shadow: 0 5px hsl(190, 88%, 35%);
+}
+
+.Simon-buttonBlue:hover,
+.Simon-buttonBlue:focus {
+  background-color: hsl(190, 88%, 65%);
+}
+
+.Simon-buttonBlue:active {
+  box-shadow: 0 2px hsl(190, 88%, 35%);
+}
+
+.Simon-control {
+  background-color: #000;
+  border-radius: 50%;
+  height: 40%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+}
