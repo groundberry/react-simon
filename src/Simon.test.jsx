@@ -9,6 +9,10 @@ describe('<Simon />', () => {
     wrapper = shallow(<Simon />);
   });
 
+  it('has an initial state of "off"', () => {
+    expect(wrapper.state('status')).toBe('off');
+  });
+
   it('renders with class name', () => {
     expect(wrapper.hasClass('Simon')).toBe(true);
   });
