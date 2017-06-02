@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Control from './Control';
 import './Simon.css';
 
 class Simon extends Component {
@@ -25,7 +26,7 @@ class Simon extends Component {
           Blue
         </button>
         <div className="Simon-control">
-          Simon
+          <Control />
         </div>
       </div>
     );

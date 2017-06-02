@@ -1,0 +1,149 @@
+.Control {
+  background: linear-gradient(45deg, rgba(140, 140, 140, 5) 0%, rgba(200, 200, 200, 1) 56%);
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px hsl(51, 80%, 90%);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 90%;
+  left: 50%;
+  padding: 0 35px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.Control-boxCount {
+  background-color: #696969;
+  border-radius: 5px;
+  font-family: 'VT323', monospace;
+  font-size: 1.75em;
+  padding-bottom: 5px;
+}
+
+.Control-buttonStart,
+.Control-buttonOnOff,
+.Control-buttonLast {
+  background-color: red;
+  border-radius: 50%;
+  border-style: none;
+  height: 25px;
+  margin: 0 5px;
+  width: 25px;
+}
+
+.Control-buttonStart {
+  background-color: hsl(51, 88%, 45%);
+  box-shadow: 0 4px hsl(51, 88%, 35%);
+}
+
+.Control-buttonStart:hover,
+.Control-buttonOnOff:hover,
+.Control-buttonLast:hover {
+  cursor: pointer;
+}
+
+.Control-button:active {
+  transform: translateY(3px);
+}
+
+.Control-buttonStart:hover,
+.Control-buttonStart:focus {
+  background-color: hsl(51, 88%, 65%);
+}
+
+.Control-buttonStart:active {
+  box-shadow: 0 2px 30px hsl(51, 88%, 35%);
+}
+
+.Control-buttonOnOff {
+  background-color: hsl(352, 88%, 45%);
+  box-shadow: 0 4px hsl(352, 88%, 35%);
+}
+
+.Control-buttonOnOff:hover,
+.Control-buttonOnOff:focus {
+  background-color: hsl(352, 88%, 65%);
+}
+
+.Control-buttonOnOff:active {
+  box-shadow: 0 2px 30px hsl(352, 88%, 35%);
+}
+
+.Control-buttonLast {
+  background-color: hsl(190, 88%, 45%);
+  box-shadow: 0 4px hsl(190, 88%, 35%);
+}
+
+.Control-buttonLast:hover,
+.Control-buttonLast:focus {
+  background-color: hsl(190, 88%, 65%);
+}
+
+.Control-buttonLast:active {
+  box-shadow: 0 2px 30px hsl(190, 88%, 35%);
+}
+
+.Control-textCount {
+  padding-bottom: 10px;
+}
+
+.Control-textCount,
+.Control-textStart,
+.Control-textOnOff,
+.Control-textLast {
+  font-family: 'Squada One', cursive;
+  font-size: 1em;
+  margin-top: 0;
+}
+
+.Control-appName {
+  font-family: 'Squada One', cursive;
+  font-size: 2.75em;
+  grid-column: col / span 3;
+  grid-row: row 1;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.Control-boxCount {
+  grid-column: col / span 3;
+  grid-row: row 2;
+  height: 30px;
+}
+
+.Control-textCount {
+  grid-column: col / span 3;
+  grid-row: row 3;
+  margin-bottom: 0;
+}
+
+.Control-buttonStart {
+  grid-column: col 1;
+  grid-row: row 4;
+}
+
+.Control-textStart {
+  grid-column: col;
+  grid-row: row 5;
+}
+
+.Control-buttonOnOff {
+  grid-column: col 2;
+  grid-row: row 4;
+}
+
+.Control-textOnOff {
+  grid-column: col 2;
+  grid-row: row 5;
+}
+
+.Control-buttonLast {
+  grid-column: col 3;
+  grid-row: row 4;
+}
+
+.Control-textLast {
+  grid-column: col 3;
+  grid-row: row 5;
+}
