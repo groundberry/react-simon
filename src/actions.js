@@ -9,7 +9,7 @@ export function getRandomColor() {
   return arrOfColors[getRandomNumber()];
 }
 
-export function getArrOfColors() {
+export function getRandomColors() {
   const result = [];
   for (let i = 0; i < 20; i += 1) {
     result.push(getRandomColor());

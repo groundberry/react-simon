@@ -1,11 +1,11 @@
 import {
-  getArrOfColors,
+  getRandomColors,
 } from './actions';
 
 describe('actions', () => {
-  describe('getArrOfColors', () => {
+  describe('getRandomColors', () => {
     it('returns an array with 20 elements', () => {
-      expect(getArrOfColors()).toHaveLength(20);
+      expect(getRandomColors()).toHaveLength(20);
     });
   });
 });
