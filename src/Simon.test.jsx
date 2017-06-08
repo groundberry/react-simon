@@ -1,12 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import Simon from './Simon';
 
 describe('<Simon />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Simon />);
+    wrapper = mount(<Simon />);
   });
 
   it('has an initial state of "off"', () => {
@@ -19,5 +19,12 @@ describe('<Simon />', () => {
 
   it('renders four buttons', () => {
     expect(wrapper.find('.Simon-button')).toHaveLength(4);
+  });
+
+  describe('handleClickOnOff', () => {
+    it('adds items to the sequence array of the state', () => {
+      wrapper.find('.Control-buttonOnOff').simulate('click');
+      expect(wrapper.state('sequence')).toHaveLength(20);
+    });
   });
 });
