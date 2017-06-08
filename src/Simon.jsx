@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import Control from './Control';
-import { getRandomColors } from './actions';
+import {
+  getRandomColors,
+  playGreen,
+  playRed,
+  playYellow,
+  playBlue,
+} from './actions';
 import './Simon.css';
 
 class Simon extends Component {
@@ -25,21 +31,25 @@ class Simon extends Component {
       <div className="Simon">
         <button
           className="Simon-button Simon-buttonGreen"
+          onClick={playGreen}
         >
           Green
         </button>
         <button
           className="Simon-button Simon-buttonRed"
+          onClick={playRed}
         >
           Red
         </button>
         <button
           className="Simon-button Simon-buttonYellow"
+          onClick={playYellow}
         >
           Yellow
         </button>
         <button
           className="Simon-button Simon-buttonBlue"
+          onClick={playBlue}
         >
           Blue
         </button>
