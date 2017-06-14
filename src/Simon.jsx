@@ -33,10 +33,15 @@ class Simon extends Component {
   }
 
   handleClickAddColor(color) {
-    playGreen();
-    playRed();
-    playYellow();
-    playBlue();
+    if (color === 'Green') {
+      playGreen();
+    } else if (color === 'Red') {
+      playRed();
+    } else if (color === 'Yellow') {
+      playYellow();
+    } else if (color === 'Blue') {
+      playBlue();
+    }
 
     this.setState({
       userInput: this.state.userInput.concat(color),
@@ -48,7 +53,6 @@ class Simon extends Component {
       <div className="Simon">
         <button
           className="Simon-button Simon-buttonGreen"
-          value="Green"
           onClick={this.addGreen}
         >
           Green

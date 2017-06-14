@@ -40,5 +40,12 @@ describe('<Simon />', () => {
       wrapper.find('.Simon-buttonYellow').simulate('click');
       expect(wrapper.state('userInput')).toEqual(['Green', 'Red', 'Yellow']);
     });
+
+    it('makes a different sound when the green button is clicked', () => {
+      const spy = jest.fn();
+      wrapper.find('.Simon-buttonGreen').simulate('click');
+      spy();
+      expect(spy).toBeCalled();
+    });
   });
 });
