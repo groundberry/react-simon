@@ -27,4 +27,18 @@ describe('<Simon />', () => {
       expect(wrapper.state('sequence')).toHaveLength(20);
     });
   });
+
+  describe('handleClickAddColor', () => {
+    it('adds the value of the clicked button to the state when it is empty', () => {
+      wrapper.find('.Simon-buttonGreen').simulate('click');
+      expect(wrapper.state('userInput')).toEqual(['Green']);
+    });
+
+    it('adds the value of the clicked button to the state when there is not empty', () => {
+      wrapper.find('.Simon-buttonGreen').simulate('click');
+      wrapper.find('.Simon-buttonRed').simulate('click');
+      wrapper.find('.Simon-buttonYellow').simulate('click');
+      expect(wrapper.state('userInput')).toEqual(['Green', 'Red', 'Yellow']);
+    });
+  });
 });

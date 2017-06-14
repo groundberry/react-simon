@@ -15,9 +15,15 @@ class Simon extends Component {
     this.state = {
       sequence: [],
       status: 'off',
+      userInput: [],
     };
 
     this.handleClickOnOff = this.handleClickOnOff.bind(this);
+    this.handleClickAddColor = this.handleClickAddColor.bind(this);
+    this.addGreen = this.handleClickAddColor.bind(this, 'Green');
+    this.addRed = this.handleClickAddColor.bind(this, 'Red');
+    this.addYellow = this.handleClickAddColor.bind(this, 'Yellow');
+    this.addBlue = this.handleClickAddColor.bind(this, 'Blue');
   }
 
   handleClickOnOff() {
@@ -26,30 +32,42 @@ class Simon extends Component {
     });
   }
 
+  handleClickAddColor(color) {
+    playGreen();
+    playRed();
+    playYellow();
+    playBlue();
+
+    this.setState({
+      userInput: this.state.userInput.concat(color),
+    });
+  }
+
   render() {
     return (
       <div className="Simon">
         <button
           className="Simon-button Simon-buttonGreen"
-          onClick={playGreen}
+          value="Green"
+          onClick={this.addGreen}
         >
           Green
         </button>
         <button
           className="Simon-button Simon-buttonRed"
-          onClick={playRed}
+          onClick={this.addRed}
         >
           Red
         </button>
         <button
           className="Simon-button Simon-buttonYellow"
-          onClick={playYellow}
+          onClick={this.addYellow}
         >
           Yellow
         </button>
         <button
           className="Simon-button Simon-buttonBlue"
-          onClick={playBlue}
+          onClick={this.addBlue}
         >
           Blue
         </button>
