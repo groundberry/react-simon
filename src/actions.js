@@ -1,39 +1,61 @@
 /* eslint-disable  import/prefer-default-export */
+import {
+  getRandomColors,
+  playSounds,
+} from './utils';
 
-export function getRandomNumber() {
-  return Math.floor(Math.random() * 4);
-}
-
-export function getRandomColor() {
-  const arrOfColors = ['Red', 'Yellow', 'Blue', 'Green'];
-  return arrOfColors[getRandomNumber()];
-}
-
-export function getRandomColors() {
-  const result = [];
-  for (let i = 0; i < 20; i += 1) {
-    result.push(getRandomColor());
+export function turnGameOnOff(prevState) {
+  if (prevState.status === 'on') {
+    return {
+      sequence: [],
+      status: 'off',
+      round: null,
+      currentColor: null,
+      currentUserIndex: null,
+    };
   }
-  return result;
+
+  return {
+    sequence: getRandomColors(),
+    status: 'on',
+    round: 1,
+    currentUserIndex: 0,
+  };
 }
 
-const soundGreen = new Audio('./soundGreen.mp3');
-const soundRed = new Audio('./soundRed.mp3');
-const soundYellow = new Audio('./soundYellow.mp3');
-const soundBlue = new Audio('./soundBlue.mp3');
+export function playSequence(arr, index) {
+  for (let i = 0; i < index; i += 1) {
+    setTimeout(() => {
+      playSounds(arr[i]);
+      this.setState({
+        currentColor: arr[i],
+      });
+    }, (i + 1) * 700);
+  }
 
-export function playGreen() {
-  soundGreen.play();
+  setTimeout(() => {
+    this.setState({
+      currentColor: null,
+    });
+  }, (index + 1) * 700);
 }
 
-export function playRed() {
-  soundRed.play();
-}
+export function checkUserOption(color, state) {
+  const { sequence, round, currentUserIndex } = state;
+  if (color === sequence[currentUserIndex] && (currentUserIndex + 1) === round) {
+    return {
+      round: round + 1,
+      currentUserIndex: 0,
+    };
+  }
 
-export function playYellow() {
-  soundYellow.play();
-}
+  if (color === sequence[currentUserIndex] && (currentUserIndex + 1) < round) {
+    return {
+      currentUserIndex: currentUserIndex + 1,
+    };
+  }
 
-export function playBlue() {
-  soundBlue.play();
+  return {
+    currentUserIndex: 0,
+  };
 }

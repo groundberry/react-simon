@@ -6,7 +6,14 @@ describe('<Simon />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<Simon />);
+    wrapper = mount(<Simon
+      sequence={['Green', 'Red', 'Yellow']}
+      status={'off'}
+      round={0}
+      currentColor={null}
+      currentUserInput={null}
+      currentUserIndex={0}
+    />);
   });
 
   it('has an initial state of "off"', () => {
@@ -21,26 +28,7 @@ describe('<Simon />', () => {
     expect(wrapper.find('.Simon-button')).toHaveLength(4);
   });
 
-  describe('handleClickOnOff', () => {
-    it('adds items to the sequence array of the state', () => {
-      wrapper.find('.Control-buttonOnOff').simulate('click');
-      expect(wrapper.state('sequence')).toHaveLength(20);
-    });
-  });
-
-  describe('handleClickAddColor', () => {
-    it('adds the value of the clicked button to the state when it is empty', () => {
-      wrapper.find('.Simon-buttonGreen').simulate('click');
-      expect(wrapper.state('userInput')).toEqual(['Green']);
-    });
-
-    it('adds the value of the clicked button to the state when there is not empty', () => {
-      wrapper.find('.Simon-buttonGreen').simulate('click');
-      wrapper.find('.Simon-buttonRed').simulate('click');
-      wrapper.find('.Simon-buttonYellow').simulate('click');
-      expect(wrapper.state('userInput')).toEqual(['Green', 'Red', 'Yellow']);
-    });
-
+  describe('handleUserTurn', () => {
     it('makes a different sound when the green button is clicked', () => {
       const spy = jest.fn();
       wrapper.find('.Simon-buttonGreen').simulate('click');

@@ -28,8 +28,9 @@
   box-shadow: 0 5px hsl(85, 88%, 35%);
 }
 
+.Simon.activeGreen .Simon-buttonGreen,
 .Simon-buttonGreen:hover,
-.Simon-buttonGreen:focus {
+.Simon-buttonGreen:active {
   background-color: hsl(85, 88%, 65%);
 }
 
@@ -43,8 +44,9 @@
   box-shadow: 0 5px hsl(352, 88%, 35%);
 }
 
+.Simon.activeRed .Simon-buttonRed,
 .Simon-buttonRed:hover,
-.Simon-buttonRed:focus {
+.Simon-buttonRed:active {
   background-color: hsl(352, 88%, 65%);
 }
 
@@ -58,8 +60,9 @@
   box-shadow: 0 5px hsl(51, 88%, 35%);
 }
 
+.Simon.activeYellow .Simon-buttonYellow,
 .Simon-buttonYellow:hover,
-.Simon-buttonYellow:focus {
+.Simon-buttonYellow:active {
   background-color: hsl(51, 88%, 65%);
 }
 
@@ -73,8 +76,9 @@
   box-shadow: 0 5px hsl(190, 88%, 35%);
 }
 
+.Simon.activeBlue .Simon-buttonBlue,
 .Simon-buttonBlue:hover,
-.Simon-buttonBlue:focus {
+.Simon-buttonBlue:active {
   background-color: hsl(190, 88%, 65%);
 }
 

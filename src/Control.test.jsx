@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import Control from './Control';
 
 
@@ -7,8 +7,14 @@ describe('<Control />', () => {
   let wrapper;
 
   beforeEach(() => {
-    const spy = jest.fn();
-    wrapper = shallow(<Control onClickOnOff={spy} />);
+    const spyOnOff = jest.fn();
+    const spyStart = jest.fn();
+
+    wrapper = mount(<Control
+      index={1}
+      onClickOnOff={spyOnOff}
+      onClickStart={spyStart}
+    />);
   });
 
   it('has three buttons', () => {
@@ -17,5 +23,9 @@ describe('<Control />', () => {
 
   it('has four subtitles', () => {
     expect(wrapper.find('h3')).toHaveLength(4);
+  });
+
+  it('shows the currentUserIndex on the screen', () => {
+    expect(wrapper.props().index).toEqual(1);
   });
 });

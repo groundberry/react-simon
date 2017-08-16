@@ -21,6 +21,10 @@
   padding-bottom: 5px;
 }
 
+.Control-boxCount h3 {
+  margin: 0;
+}
+
 .Control-buttonStart,
 .Control-buttonOnOff,
 .Control-buttonLast {
