@@ -2,6 +2,7 @@
   "name": "simon",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://groundberry.github.io/react-simon",
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
@@ -24,6 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "npm run build && gh-pages -d build",
     "test:lint:css": "stylelint \"src/**/*.css\"",
     "test:lint:js": "eslint --ext=jsx --ext=js src/",
     "test:unit": "react-scripts test --env=jsdom",
