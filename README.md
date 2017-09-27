@@ -13,11 +13,13 @@ This project is part of the Free Code Camp's front-end track. I'll build a Simon
 - I can play in strict mode where if I get a button press wrong, it notifies me that I have done so, and the game restarts at a new random series of button presses.
 - I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
 
+![Simon game](public/img/simon-game.png)
+
 ## Technologies used
 
-The client side of the app is built with [React](https://facebook.github.io/react/). I used [Create React App](https://github.com/facebookincubator/create-react-app) to get it started.
+This app is built with [React](https://facebook.github.io/react/). I used [Create React App](https://github.com/facebookincubator/create-react-app) to get it started.
 
-For testing I used [Jest](https://github.com/facebook/jest).
+For testing I used [Jest](https://github.com/facebook/jest), and [Enzyme](https://github.com/airbnb/enzyme).
 
 ## Running
 
@@ -46,3 +48,4 @@ Run the tests:
 ```
 $ npm run test
 ```
+![Unit tests](public/img/unit-tests.png)
